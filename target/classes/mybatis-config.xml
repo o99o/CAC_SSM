@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="callSettersOnNulls" value="true"/>
+        <!-- <setting name="logImpl" value="LOG4J2" /> -->
+    </settings>
+	<!-- 别名 -->
+	<typeAliases>
+		<package name="com.zit.cac.entity"/>
+	</typeAliases>
+	
+	<!-- MyBatis实现分页插件 -->
+    <plugins>              
+	    <plugin interceptor="com.github.pagehelper.PageInterceptor">
+	    	<!-- 设置数据库类型 oracle,mysql,mariadb,sqlite,hsqldb,postgresql,db2,sqlserver,informix,h2,sqlserver2012六种数据库-->
+	    	<!-- 其中sqlserver对应2005、2008-->
+	        <property name="helperDialect" value="mysql"/>
+	        <property name="offsetAsPageNum" value="false"/>
+	        <property name="rowBoundsWithCount" value="false"/>
+	        <property name="pageSizeZero" value="true"/>
+	        <property name="reasonable" value="true"/>
+	        <property name="supportMethodsArguments" value="false"/>
+	        <property name="returnPageInfo" value="none"/>
+	    </plugin>
+	</plugins>
+	
+    
+</configuration>

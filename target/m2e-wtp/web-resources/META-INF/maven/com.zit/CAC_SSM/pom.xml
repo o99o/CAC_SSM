@@ -1,0 +1,387 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zit</groupId>
+	<artifactId>CAC_SSM</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<!-- spring版本号 -->
+		<spring.version>5.1.5.RELEASE</spring.version>
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.2.6</mybatis.version>
+		<mybatis-spring.version>1.3.1</mybatis-spring.version>
+		<!-- log4j2日志文件管理包版本 -->
+		<log4j.version>2.10.0</log4j.version>
+		<slf4j-api.version>1.7.25</slf4j-api.version>
+		
+		<!-- jedis -->
+		<jedis.version>2.7.0</jedis.version>
+		<!-- juint -->
+		<juint.version>4.12</juint.version>
+		<!-- jackson -->
+		<jackson.version>2.9.5</jackson.version>
+		<!-- jackson-mapper -->
+		<jackson-mapper.version>1.9.13</jackson-mapper.version>
+		<!-- pagehelper -->
+		<pagehelper.version>5.1.3</pagehelper.version>
+		<!-- mysql-connector -->
+		<mysql-connector.version>5.1.30</mysql-connector.version>
+		<!-- javaee-api -->
+		<javaee-api.version>7.0</javaee-api.version>
+		<!-- druid -->
+		<druid.version>1.1.10</druid.version>
+		<!-- jstl -->
+		<jstl.version>1.2</jstl.version>
+		<!-- fastjson -->
+		<fastjson.version>1.2.5</fastjson.version>
+		<!-- commons-fileupload -->
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<!-- commons-io -->
+		<commons-io.version>2.4</commons-io.version>
+		<!-- commons-codec -->
+		<commons-codec.version>1.9</commons-codec.version>
+		<!-- poi -->
+		<poi.version>3.12</poi.version>
+		<!-- commons-lang3 -->
+		<commons-lang3.version>3.0</commons-lang3.version>
+		<!-- netty -->
+		<netty.version>4.1.25.Final</netty.version>
+		<!-- quartz -->
+		<quartz.version >2.2.1</quartz.version>
+		<!-- xbean-spring -->
+		<xbean-spring.version >4.0</xbean-spring.version>
+		<!-- axis2 -->
+		<axis2.version>1.6.3</axis2.version>
+		<!-- xmlbeans.version -->
+		<xmlbeans.version>2.6.0</xmlbeans.version>
+		<!-- orika.version -->
+		<orika.version>1.4.6</orika.version>
+		<!-- spring-data-redis -->
+		<spring-data-redis.version>1.6.2.RELEASE</spring-data-redis.version>
+		<!--spring-integration-kafka  -->
+		<spring-integration-kafka.version>1.3.0.RELEASE</spring-integration-kafka.version>
+		<!-- kafka-clients -->
+		<kafka-clients.version>1.0.2</kafka-clients.version>
+		<!-- spring-kafka -->
+		<spring-kafka.version>2.0.3.RELEASE</spring-kafka.version>
+		
+	</properties>
+
+	<dependencies>
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${juint.version}</version>
+		<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+		<scope>test</scope>
+	</dependency>
+	    
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-websocket</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-oxm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+
+	<!-- mybatis核心包 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>${mybatis.version}</version>
+	</dependency>
+
+	<!-- mybatis/spring包 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>${mybatis-spring.version}</version>
+	</dependency>
+
+	<!-- mybatis分页（目前最新版本：截止20180510） -->
+	<dependency>
+		<groupId>com.github.pagehelper</groupId>
+		<artifactId>pagehelper</artifactId>
+		<version>${pagehelper.version}</version>
+	</dependency>
+
+	<!-- 导入java ee jar 包 -->
+	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-api</artifactId>
+		<version>${javaee-api.version}</version>
+	</dependency>
+
+	<!-- 导入Mysql数据库链接jar包 -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql-connector.version}</version>
+	</dependency>
+
+	<!-- druid 实现数据库连接 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid</artifactId>
+		<version>${druid.version}</version>
+	</dependency>
+
+	<!-- JSTL标签类 -->
+	<dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>${jstl.version}</version>
+	</dependency>
+
+	<!-- 日志文件管理包 -->
+	<!-- log start -->
+	<dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j.version}</version>
+   	</dependency>
+   	<dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j.version}</version>
+   	</dependency>
+   	<!-- <dependency>
+         <groupId>org.apache.logging.log4j</groupId>
+         <artifactId>log4j-web</artifactId>
+         <version>${log4j.version}</version>
+     </dependency> -->
+     <!-- 桥接：告诉Slf4j使用Log4j2 -->    
+     <dependency>      
+     <groupId>org.apache.logging.log4j</groupId>      
+     <artifactId>log4j-slf4j-impl</artifactId>      
+     <version>${log4j.version}</version>    
+     </dependency>    
+     <!-- 桥接：告诉commons logging使用Log4j2 -->    
+     <dependency>      
+     <groupId>org.apache.logging.log4j</groupId>      
+     <artifactId>log4j-jcl</artifactId>      
+     <version>${log4j.version}</version>    
+     </dependency>  
+       
+     <dependency>      
+     <groupId>org.slf4j</groupId>      
+     <artifactId>slf4j-api</artifactId>      
+     <version>${slf4j-api.version}</version>    
+     </dependency>
+
+	<!-- 格式化对象，方便输出日志 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>${fastjson.version}</version>
+	</dependency>
+
+	<!-- jackson2 -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-annotations</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>${jackson-mapper.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-core-asl</artifactId>
+		<version>${jackson-mapper.version}</version>
+	</dependency>
+	<!-- jackson2 -->
+
+	<!-- 上传组件包 -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>${commons-fileupload.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>${commons-io.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>${commons-codec.version}</version>
+	</dependency>
+
+	<!-- POI支持 -->
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>${poi.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>${commons-lang3.version}</version>
+	</dependency>
+	<!-- netty -->
+	<dependency>
+		<groupId>io.netty</groupId>
+		<artifactId>netty-all</artifactId>
+		<version>${netty.version}</version>
+	</dependency>
+		
+	<!-- 新加quartz依赖 -->
+	<dependency>
+		<groupId>org.quartz-scheduler</groupId>
+		<artifactId>quartz</artifactId>
+		<version>${quartz.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.quartz-scheduler</groupId>
+		<artifactId>quartz-jobs</artifactId>
+		<version>${quartz.version}</version>
+	</dependency>
+	<!-- xml文件表头添加mq命名空间的整合 -->
+	<dependency>
+		<groupId>org.apache.xbean</groupId>
+		<artifactId>xbean-spring</artifactId>
+		<version>${xbean-spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.axis2</groupId>
+		<artifactId>axis2-transport-http</artifactId>
+		<version>${axis2.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.axis2</groupId>
+		<artifactId>axis2-transport-local</artifactId>
+		<version>${axis2.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.xmlbeans</groupId>
+		<artifactId>xmlbeans</artifactId>
+		<version>${xmlbeans.version}</version>
+	</dependency>
+	<!--axis2 客户端 -->
+	<dependency>
+		<groupId>org.apache.axis2</groupId>
+		<artifactId>axis2-adb</artifactId>
+		<version>${axis2.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.axis2</groupId>
+		<artifactId>axis2-kernel</artifactId>
+		<version>${axis2.version}</version>
+	</dependency>
+	
+	<!--orika bean复制 -->
+	<dependency>
+		<groupId>ma.glasnost.orika</groupId>
+		<artifactId>orika-core</artifactId>
+		<version>${orika.version}</version>
+	</dependency>
+	
+	<!-- redis客户端 -->
+	<dependency>
+	    <groupId>redis.clients</groupId>
+	    <artifactId>jedis</artifactId>
+	    <version>${jedis.version}</version>
+	</dependency>
+	 <dependency>
+           <groupId>org.springframework.data</groupId>
+           <artifactId>spring-data-redis</artifactId>
+           <version>${spring-data-redis.version}</version>
+       </dependency>
+	<!-- spring-kafka -->
+     <dependency>
+		<groupId>org.springframework.integration</groupId>
+		<artifactId>spring-integration-kafka</artifactId>
+		<version>${spring-integration-kafka.version}</version>
+	 </dependency>
+	 <dependency>
+		<groupId>org.apache.kafka</groupId>
+		<artifactId>kafka-clients</artifactId>
+		<version>${kafka-clients.version}</version>
+	 </dependency>
+	 <dependency>
+		<groupId>org.springframework.kafka</groupId>
+		<artifactId>spring-kafka</artifactId>
+		<version>${spring-kafka.version}</version>
+	 </dependency>
+	</dependencies>
+</project>
