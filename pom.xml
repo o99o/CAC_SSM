@@ -48,7 +48,7 @@
 		<!-- commons-lang3 -->
 		<commons-lang3.version>3.0</commons-lang3.version>
 		<!-- netty -->
-		<netty.version>4.1.25.Final</netty.version>
+		<netty.version>4.1.42.Final</netty.version>
 		<!-- quartz -->
 		<quartz.version >2.2.1</quartz.version>
 		<!-- xbean-spring -->
