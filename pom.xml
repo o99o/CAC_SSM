@@ -20,7 +20,7 @@
 		<!-- jedis -->
 		<jedis.version>2.7.0</jedis.version>
 		<!-- juint -->
-		<juint.version>4.12</juint.version>
+		<juint.version>4.13.1</juint.version>
 		<!-- jackson -->
 		<jackson.version>2.9.5</jackson.version>
 		<!-- jackson-mapper -->
