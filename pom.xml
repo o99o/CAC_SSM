@@ -44,7 +44,7 @@
 		<!-- commons-codec -->
 		<commons-codec.version>1.9</commons-codec.version>
 		<!-- poi -->
-		<poi.version>3.12</poi.version>
+		<poi.version>3.17</poi.version>
 		<!-- commons-lang3 -->
 		<commons-lang3.version>3.0</commons-lang3.version>
 		<!-- netty -->
