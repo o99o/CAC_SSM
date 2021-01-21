@@ -22,7 +22,7 @@
 		<!-- juint -->
 		<juint.version>4.12</juint.version>
 		<!-- jackson -->
-		<jackson.version>2.9.5</jackson.version>
+		<jackson.version>2.12.1</jackson.version>
 		<!-- jackson-mapper -->
 		<jackson-mapper.version>1.9.13</jackson-mapper.version>
 		<!-- pagehelper -->
